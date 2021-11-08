@@ -1,0 +1,11 @@
+# install MariaDB
+yum install mariadb-server mariadb
+
+# Start MariaDB
+systemctl start mariadb
+
+# Enable masiadb
+systemctl enable mariadb
+
+# secure mariadb
+mysql_secure_installation
