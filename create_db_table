@@ -1,0 +1,21 @@
+CREATE DATABASE mslab;
+use mslab;
+
+CREATE TABLE persons ( PersonID int, LastName varchar(255), FirstName varchar(255), City varchar(255) );
+
+MariaDB [replicadb]> describe persons;
+
+MariaDB [replicadb]> SELECT *FROM persons;
+Empty set (0.00 sec)
+
+MariaDB [replicadb]> INSERT INTO persons (PersonID, LastName, FirstName, City)
+    -> VALUES (1001, 'Kumar', 'Pankaj', 'Mumbai');
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [replicadb]> SELECT *FROM persons;
++----------+----------+-----------+--------+
+| PersonID | LastName | FirstName | City   |
++----------+----------+-----------+--------+
+|     1001 | Kumar    | Pankaj    | Mumbai |
++----------+----------+-----------+--------+
+1 row in set (0.00 sec)
