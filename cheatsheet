@@ -51,3 +51,12 @@ SELECT * FROM mytable RIGHT JOIN ON mytable.id=othertable.foo;
 Display a full join
 SELECT foo,bar,baz FROM mytable FULL JOIN othertable ON mytable.id=othertable.quux;
 
+-- ############ IF YOU NEED TO START OVER ON THE DATABASE: ##############
+   drop database testdb;
+   drop user `tester`@`localhost`;
+   drop user `tester`@`10.137.64.201`;
+   drop user `replica_user`@`%`;
+-- ######################################################################
+
+CNF=/etc/mysql/mariadb.conf.d/90-custom.cnf
+vi $CNF
