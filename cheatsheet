@@ -1,0 +1,53 @@
+Connect to local database server                  
+$ mysql --user=root -p –-host localhost
+
+Connect to remote database server                 
+$ mysql –user=root -p –host example.com
+
+Place credentials in ~/.my.cnf and set permissions to 0600 to enable automatic authentication
+[client]
+user=root
+password=my_secure_passphrase
+
+List databases 
+SHOW DATABASES;
+
+Make example the active database 
+use example;
+
+List tables in current database
+SHOW TABLES;
+
+List columns in mytable table
+SHOW COLUMNS IN mytable;
+
+Create a new user tux on localhost
+CREATE USER ‘tux’@’localhost’ IDENTIFIED BY ‘tux_password’;
+
+Grant select privileges to user tux
+GRANT SELECT ON *.* TO ‘tux’@’localhost’;
+
+Create database
+CREATE DATABASE;
+
+Create table and define fields
+CREATE table IF NOT EXISTS mytable (id INT auto_increment PRIMARY KEY, foo varchar(64) NOT NULL);
+
+Insert data into a table
+INSERT INTO mytable (foo) VALUES ('aaa'), ('bbb'),('ccc');
+
+Add a new column to mytable
+ALTER TABLE mytable ADD COLUMN (bar INT);
+
+Update data in a table
+UPDATE mytable SET foo=’aaa’ WHERE id=1;
+
+Display an inner join
+SELECT * FROM mytable JOIN othertable ON mytable.id=othertable.foo;
+
+Display a right (or left) join
+SELECT * FROM mytable RIGHT JOIN ON mytable.id=othertable.foo;
+
+Display a full join
+SELECT foo,bar,baz FROM mytable FULL JOIN othertable ON mytable.id=othertable.quux;
+
