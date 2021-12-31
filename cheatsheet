@@ -60,3 +60,5 @@ SELECT foo,bar,baz FROM mytable FULL JOIN othertable ON mytable.id=othertable.qu
 
 CNF=/etc/mysql/mariadb.conf.d/90-custom.cnf
 vi $CNF
+
+FLUSH PRIVILEGES;
