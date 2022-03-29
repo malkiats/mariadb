@@ -1,5 +1,8 @@
 # install MariaDB
-yum install mariadb-server mariadb
+yum install mariadb-server mariadb  
+
+# amzn
+sudo amazon-linux-extras install mariadb10.5
 
 # Start MariaDB
 systemctl start mariadb
