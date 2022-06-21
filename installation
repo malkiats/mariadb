@@ -1,5 +1,5 @@
-# install MariaDB
-yum install mariadb-server mariadb  
+# install MariaDB Default
+yum install mariadb-server mariadb
 
 # amzn
 sudo amazon-linux-extras install mariadb10.5
@@ -12,3 +12,23 @@ systemctl enable mariadb
 
 # secure mariadb
 mysql_secure_installation
+
+==============================================
+
+# install MariaDB 10.4
+wget https://downloads.mariadb.com/MariaDB/mariadb_repo_setup
+chmod +x mariadb_repo_setup
+systemctl start mariadb
+systemctl status mariadb
+mariadb-secure-installation
+
+# Check default dir
+mysql -u root -p -e "SELECT @@datadir;"
+
+# Change data dir
+systemctl stop mariadb
+systemctl is-active mariadb
+systemctl status mariadb
+mv /var/lib/mysql/* /mysql/
+nano /etc/my.cnf
+systemctl start mariadb
